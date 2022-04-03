@@ -80,6 +80,7 @@
                 <div class="clickerContainer unselectable">
                     <img src="images/cheezburger.png" height="256px" width="256px" onclick="addToScore(1)">
                 </div>
+                <button onclick="saveGame();">Save Game</button>
             </center>
             
             <div class="sectionFooter unselectable">
@@ -223,27 +224,38 @@
         <script>
             var score = 0;
             
-            var items = {
-                cursor: { cost: 15, count: 0 },
-                cheez: { cost: 100, count: 0 },
-                grill: { cost: 500, count: 0 },
-                condiment: { cost: 1000, count: 0 },
-                toastedbun: { cost: 5000, count: 0 },
-                propane: { cost: 10000, count: 0 },
-                fries: { cost: 50000, count: 0 },
-                assistant: { cost: 100000, count: 0 },
-                bakedbean: { cost: 500000, count: 0 },
-                extracheez: { cost: 1000000, count: 0 },
-                doubleburger: { cost: 5000000, count: 0 },
-                tomatoes: { cost: 10000000, count: 0 },
-                pickles: { cost: 25000000, count: 0 }
-            }
+            var cursorCost = 15;
+            var cursors = 0;
+            var cheezCost = 100;
+            var cheezs = 0;
+            var grillCost = 500;
+            var grills = 0;
+            var condimentCost = 1000;
+            var condiments = 0;
+            var toastedbunCost = 5000;
+            var toastedbuns = 0;
+            var propaneCost = 10000;
+            var propanes = 0;
+            var friesCost = 50000;
+            var friess = 0;
+            var assistantCost = 100000;
+            var assistants = 0;
+            var bakedbeanCost = 500000;
+            var bakedbeans = 0;
+            var extracheezCost = 1000000;
+            var extracheezs = 0;
+            var doubleburgerCost = 5000000;
+            var doubleburgers = 0;
+            var tomatoesCost = 10000000;
+            var tomatoess = 0;
+            var picklesCost = 25000000;
+            var pickless = 0;
             
             function buyCursor() {
-                if (score >= items.cursor.cost) {
-                    score = score - items.cursor.cost;
-                    items.cursor.count = items.cursor.count + 1;
-                    items.cursor.cost = Math.round(items.cursor.cost * 1.15);
+                if (score >= cursorCost) {
+                    score = score - cursorCost;
+                    cursors = cursors + 1;
+                    cursorCost = Math.round(cursorCost * 1.15);
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("cursorcost").innerHTML = cursorCost;
@@ -253,10 +265,10 @@
             }
             
             function buyCheez() {
-                if (score >= items.cheez.cost) {
-                    score = score - items.cheez.cost;
-                    items.cheez.count = items.cheez.count + 1;
-                    items.cheez.cost = Math.round(items.cheez.cost * 1.15);
+                if (score >= cheezCost) {
+                    score = score - cheezCost;
+                    cheezs = cheezs + 1;
+                    cheezCost = Math.round(cheezCost * 1.15);
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("cheezcost").innerHTML = cheezCost;
@@ -266,10 +278,10 @@
             }
             
             function buyGrill() {
-                if (score >= items.grill.cost) {
-                    score = score - items.grill.cost;
-                    items.grill.count = items.grill.count + 1;
-                    items.grill.cost = Math.round(items.grill.cost * 1.15);
+                if (score >= grillCost) {
+                    score = score - grillCost;
+                    grills = grills + 1;
+                    grillCost = Math.round(grillCost * 1.15);
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("grillcost").innerHTML = grillCost;
@@ -279,10 +291,10 @@
             }
             
             function buyCondiment() {
-                if (score >= items.contiment.cost) {
-                    score = score - items.contiment.cost;
-                    items.condiment.count = items.condiment.count + 1;
-                    items.contiment.cost = Math.round(items.contiment.cost * 1.15);
+                if (score >= condimentCost) {
+                    score = score - condimentCost;
+                    condiments = condiments + 1;
+                    condimentCost = Math.round(condimentCost * 1.15);
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("condimentcost").innerHTML = condimentCost;
@@ -292,10 +304,10 @@
             }
             
             function buyToastedbun() {
-                if (score >= items.toastedbun.cost) {
-                    score = score - items.toastedbun.cost;
-                    items.toastedbun.count = items.toastedbun.count + 1;
-                    items.toastedbun.cost = Math.round(items.toastedbun.cost * 1.15);
+                if (score >= toastedbunCost) {
+                    score = score - toastedbunCost;
+                    toastedbuns = toastedbuns + 1;
+                    toastedbunCost = Math.round(toastedbunCost * 1.15);
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("toastedbuncost").innerHTML = toastedbunCost;
@@ -305,10 +317,10 @@
             }
             
             function buyPropane() {
-                if (score >= items.propane.cost) {
-                    score = score - items.propane.cost;
-                    items.propane.count = items.propane.count + 1;
-                    items.propane.cost = Math.round(items.propane.cost * 1.15);
+                if (score >= propaneCost) {
+                    score = score - propaneCost;
+                    propanes = propanes + 1;
+                    propaneCost = Math.round(propaneCost * 1.15);
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("propanecost").innerHTML = propaneCost;
@@ -318,10 +330,10 @@
             }
             
             function buyFries() {
-                if (score >= items.fries.cost) {
-                    score = score - items.fries.cost;
-                    items.fries.count = items.fries.count + 1;
-                    items.fries.cost = Math.round(items.fries.cost * 1.15);
+                if (score >= friesCost) {
+                    score = score - friesCost;
+                    friess = friess + 1;
+                    friesCost = Math.round(friesCost * 1.15);
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("friescost").innerHTML = friesCost;
@@ -331,10 +343,10 @@
             }
             
             function buyAssistant() {
-                if (score >= items.assistant.cost) {
-                    score = score - items.assistant.cost;
-                    items.assistant.count = items.assistant.count + 1;
-                    items.assistant.cost = Math.round(items.assistant.cost * 1.15);
+                if (score >= assistantCost) {
+                    score = score - assistantCost;
+                    assistants = assistants + 1;
+                    assistantCost = Math.round(assistantCost * 1.15);
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("assistantcost").innerHTML = assistantCost;
@@ -344,10 +356,10 @@
             }
             
             function buyBakedbean() {
-                if (score >= items.bakedbean.cost) {
-                    score = score - items.bakedbean.cost;
-                    items.bakedbean.count = items.bakedbean.count + 1;
-                    items.bakedbean.cost = Math.round(items.bakedbean.cost * 1.15);
+                if (score >= bakedbeanCost) {
+                    score = score - bakedbeanCost;
+                    bakedbeans = bakedbeans + 1;
+                    bakedbeanCost = Math.round(bakedbeanCost * 1.15);
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("bakedbeancost").innerHTML = bakedbeanCost;
@@ -357,10 +369,10 @@
             }
             
             function buyExtracheez() {
-                if (score >= items.extracheez.cost) {
-                    score = score - items.extracheez.cost;
-                    items.extracheez.count = items.extracheez.count + 1;
-                    items.extracheez.cost = Math.round(items.extracheez.cost * 1.15);
+                if (score >= extracheezCost) {
+                    score = score - extracheezCost;
+                    extracheezs = extracheezs + 1;
+                    extracheezCost = Math.round(extracheezCost * 1.15);
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("extracheezcost").innerHTML = extracheezCost;
@@ -370,10 +382,10 @@
             }
             
             function buyDoubleburger() {
-                if (score >= items.doubleburger.cost) {
-                    score = score - items.doubleburger.cost;
-                    items.doubleburger.count = items.doubleburger.count + 1;
-                    items.doubleburger.cost = Math.round(items.doubleburger.cost * 1.15);
+                if (score >= doubleburgerCost) {
+                    score = score - doubleburgerCost;
+                    doubleburgers = doubleburgers + 1;
+                    doubleburgerCost = Math.round(doubleburgerCost * 1.15);
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("doubleburgercost").innerHTML = doubleburgerCost;
@@ -383,10 +395,10 @@
             }
             
             function buyTomatoes() {
-                if (score >= items.tomatoes.cost) {
-                    score = score - items.tomatoes.cost;
-                    items.tomatoes.count = items.tomatoes.count + 1;
-                    items.tomatoes.cost = Math.round(items.tomatoes.cost * 1.15);
+                if (score >= tomatoesCost) {
+                    score = score - tomatoesCost;
+                    tomatoess = tomatoess + 1;
+                    tomatoesCost = Math.round(tomatoesCost * 1.15);
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("tomatoescost").innerHTML = tomatoesCost;
@@ -396,10 +408,10 @@
             }
             
             function buyPickles() {
-                if (score >= items.pickles.cost) {
-                    score = score - items.pickles.cost;
-                    items.pickles.count = items.pickles.count + 1;
-                    items.pickles.cost = Math.round(items.pickles.cost * 1.15);
+                if (score >= picklesCost) {
+                    score = score - picklesCost;
+                    pickless = pickless + 1;
+                    picklesCost = Math.round(picklesCost * 1.15);
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("picklescost").innerHTML = picklesCost;
@@ -416,6 +428,40 @@
             function updateScorePerSecond() {
                 scorePerSecond = cursors * 1+ cheezs * 3 + grills * 5 + condiments * 10 + toastedbuns * 50 + propanes * 75 + friess * 100 + assistants * 500 + bakedbeans * 1000 + extracheezs * 5000 + doubleburgers * 10000 + tomatoess * 15000 + pickless * 25000;
                 document.getElementById("scorepersecond").innerHTML = scorePerSecond;
+            }
+            
+            function saveGame() {
+                var gameSave = {
+                    score: score,
+                    clickingPower: clickingPower,
+                    cursorCost: cursorCost,
+                    cursors: cursors,
+                    cheezCost: cheezCost,
+                    cheezs: cheezs,
+                    grillCost: grillCost,
+                    grills: grills,
+                    condimentCost: condimentCost,
+                    condiments: condiments,
+                    toastedbunCost: toastedbunCost,
+                    toastedbuns: toastedbuns,
+                    propaneCost: propaneCost,
+                    propanes: propanes,
+                    friesCost: friesCost,
+                    friess: friess,
+                    assistantCost: assistantCost,
+                    assistants: assistants,
+                    bakedbeanCost: bakedbeanCost,
+                    bakedbeans: bakedbeans,
+                    extracheezCost: extracheezCost,
+                    extracheezs: extracheezs,
+                    doubleburgerCost: doubleburgerCost,
+                    doubleburgers: doubleburgers,
+                    tomatoesCost: tomatoesCost,
+                    tomatoess: tomatoess,
+                    picklesCost: picklesCost,
+                    pickless: pickless
+                };
+                localStorage.setItem("gameSave", JSON.stringify(gameSave));
             }
             
             setInterval(function() {
@@ -435,7 +481,11 @@
                 document.getElementById("score").innerHTML = score;
                 
                 document.title = score + "cheez - Cheezburger Clicker";
-            }, 1000)
+            }, 1000);
+            
+            setInterval(function() {
+                saveGame();
+            }, 30000);
         </script>
     </body>
 </HTML>
