@@ -433,7 +433,6 @@
             function loadGame() {
                 var savedGame = JSON.parse(localStorage.getItem("gameSave"));
                 if (typeof savedGame.score !== "undefined") score = savedGame.score;
-                if (typeof savedGame.clickingPower !== "undefined") clickingPower = savedGame.clickingPower;
                 if (typeof savedGame.cursorCost !== "undefined") cursorCost = savedGame.cursorCost;
                 if (typeof savedGame.cheezCost !== "undefined") cheezCost = savedGame.cheezCost;
                 if (typeof savedGame.cheezs !== "undefined") cheezs = savedGame.cheezs;
@@ -464,7 +463,6 @@
             function saveGame() {
                 var gameSave = {
                     score: score,
-                    clickingPower: clickingPower,
                     cursorCost: cursorCost,
                     cursors: cursors,
                     cheezCost: cheezCost,
