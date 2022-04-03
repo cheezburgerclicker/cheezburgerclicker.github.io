@@ -434,6 +434,7 @@
                 var savedGame = JSON.parse(localStorage.getItem("gameSave"));
                 if (typeof savedGame.score !== "undefined") score = savedGame.score;
                 if (typeof savedGame.cursorCost !== "undefined") cursorCost = savedGame.cursorCost;
+                if (typeof savedGame.cursors !== "undefined") cursors = savedGame.cursors;
                 if (typeof savedGame.cheezCost !== "undefined") cheezCost = savedGame.cheezCost;
                 if (typeof savedGame.cheezs !== "undefined") cheezs = savedGame.cheezs;
                 if (typeof savedGame.grillCost !== "undefined") grillCost = savedGame.grillCost;
@@ -549,7 +550,7 @@
                 score = score + pickless * 25000;
                 document.getElementById("score").innerHTML = score;
                 
-                document.title = score + "cheez - Cheezburger Clicker";
+                document.title = score + " cheez - Cheezburger Clicker";
             }, 1000);
             
             setInterval(function() {
