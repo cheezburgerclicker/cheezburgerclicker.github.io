@@ -223,32 +223,21 @@
         <script>
             var score = 0;
             
-            var cursorCost = 15;
-            var cursors = 0;
-            var cheezCost = 100;
-            var cheezs = 0;
-            var grillCost = 500;
-            var grills = 0;
-            var condimentCost = 1000;
-            var condiments = 0;
-            var toastedbunCost = 5000;
-            var toastedbuns = 0;
-            var propaneCost = 10000;
-            var propanes = 0;
-            var friesCost = 50000;
-            var friess = 0;
-            var assistantCost = 100000;
-            var assistants = 0;
-            var bakedbeanCost = 500000;
-            var bakedbeans = 0;
-            var extracheezCost = 1000000;
-            var extracheezs = 0;
-            var doubleburgerCost = 5000000;
-            var doubleburgers = 0;
-            var tomatoesCost = 10000000;
-            var tomatoess = 0;
-            var picklesCost = 25000000;
-            var pickless = 0;
+            var items = {
+                cursor: { cost: 15, count: 0 },
+                cheez: { cost: 100, count: 0 },
+                grill: { cost: 500, count: 0 },
+                condiment: { cost: 1000, count: 0 },
+                toastedbun: { cost: 5000, count: 0 },
+                propane: { cost: 10000, count: 0 },
+                fries: { cost: 50000, count: 0 },
+                assistant: { cost: 100000, count: 0 },
+                bakedbean: { cost: 500000, count: 0 },
+                extracheez: { cost: 1000000, count: 0 },
+                doubleburger: { cost: 5000000, count: 0 },
+                tomatoes: { cost: 10000000, count: 0 },
+                pickles: { cost: 25000000, count: 0 }
+            }
             
             function buyCursor() {
                 if (score >= cursorCost) {
