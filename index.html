@@ -984,12 +984,12 @@
             }
             
             function buyPowerup() {
-                move();
                 if (score >= powerupCost) {
                     score = score - powerupCost;
                     powerups = powerups + 1;
                     powerupCost = Math.round(powerupCost * 10);
                     scoreMultiplier();
+                    move();
                     
                     document.getElementById("score").innerHTML = score;
                     document.getElementById("powerupcost").innerHTML = powerupCost;
@@ -1115,6 +1115,7 @@
                 btn20.style.backgroundColor = 'green';
                 btn20.style.color = 'white';
                 btn20.style.borderColor = 'green';
+                mcpds = mcpds + 100;
             }
             
             setInterval(function() {
